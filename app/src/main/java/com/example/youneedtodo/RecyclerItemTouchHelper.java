@@ -13,15 +13,27 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.app.AlertDialog;
 import com.example.youneedtodo.Adapter.ToDoAdapter;
+import com.example.youneedtodo.Utils.DatabaseHandler;
+
+import java.util.Collections;
+import java.util.List;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
     private ToDoAdapter adapter;
-    public RecyclerItemTouchHelper(ToDoAdapter adapter){
-        super(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+    private DatabaseHandler db;
+
+    public RecyclerItemTouchHelper(ToDoAdapter adapter, DatabaseHandler db){
+        super(ItemTouchHelper.UP|ItemTouchHelper.DOWN,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT );
         this.adapter = adapter;
+        this.db=db;
+
     }
     @Override
-    public boolean onMove(RecyclerView recyclerView,RecyclerView.ViewHolder viewHolder,RecyclerView.ViewHolder target){
+    public boolean onMove(RecyclerView recyclerView,RecyclerView.ViewHolder dragged,RecyclerView.ViewHolder target){
+        int position_dragged = dragged.getAdapterPosition();
+        int position_target = target.getAdapterPosition();
+        Collections.swap( db.getAllTasks(),position_dragged,position_target);
+        adapter.notifyItemMoved(position_dragged,position_target);
         return false;
     }
     @Override
