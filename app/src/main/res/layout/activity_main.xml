@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:onClick="setCounter">
+
+    <TextView
+        android:id="@+id/tasksText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TO-DO"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textSize="32sp"
+        android:layout_marginBottom="16dp"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/counterCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:layout_toRightOf="@id/tasksText"
+
+        >
+
+        <TextView
+            android:id="@+id/counter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="24sp" />
+
+    </androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tasksRecyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tasksText"
+        android:nestedScrollingEnabled="true"
+        android:onClick="setCounter"
+
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:onClick="setCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="32dp"
+        android:backgroundTint="@android:color/holo_blue_bright"
+        android:src="@drawable/ic_baseline_add_24"/>
+</RelativeLayout>

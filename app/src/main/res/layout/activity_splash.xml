@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:anndoid="http://schemas.android.com/apk/res/android"
+    anndoid:layout_width="match_parent"
+    anndoid:layout_height="match_parent"
+    anndoid:background="@android:color/holo_blue_bright">
+
+    <ImageView
+        anndoid:layout_width="150dp"
+        anndoid:layout_height="150dp"
+        anndoid:layout_centerInParent="true"
+        anndoid:src="@drawable/to_do"
+        anndoid:paddingRight="20dp"/>
+
+</RelativeLayout>

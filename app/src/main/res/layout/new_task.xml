@@ -1,0 +1,25 @@
+<RelativeLayout xmlns:andoid="http://schemas.android.com/apk/res/android"
+    andoid:layout_width="match_parent"
+    andoid:layout_height="wrap_content">
+    <EditText
+      andoid:id="@+id/newTaskText"
+      andoid:layout_width="match_parent"
+      andoid:layout_height="wrap_content"
+      andoid:background="@null"
+      andoid:textAppearance="@style/TextAppearance.AppCompat.Medium"
+      andoid:hint="New Tesk"/>
+    <Button
+        andoid:id="@+id/newTeskButton"
+        andoid:layout_width="wrap_content"
+        andoid:layout_height="wrap_content"
+        andoid:layout_below="@id/newTaskText"
+        andoid:layout_alignParentEnd="true"
+        andoid:textSize="16sp"
+        andoid:text="Save"
+        andoid:textAllCaps="false"
+        andoid:onClick="setCounter"
+        andoid:textColor="@android:color/darker_gray"
+        andoid:background="@android:color/transparent"/>
+
+
+</RelativeLayout>
